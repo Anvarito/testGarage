@@ -5,7 +5,7 @@ namespace _Game.Scripts
 {
     public class FirstPersonController : MonoBehaviour
     {
-        public float moveSpeed = 5f;        
+        public float moveSpeed = 5f;
         public float mouseSensitivity = 2f;
         public CharacterController _characterController;
         public Transform playerCamera;
@@ -32,8 +32,15 @@ namespace _Game.Scripts
             float moveX = Input.GetAxis("Horizontal");
             float moveZ = Input.GetAxis("Vertical");
 
-            Vector3 move = transform.right * moveX + transform.forward * moveZ + Physics.gravity;
-            _characterController.Move(move * moveSpeed * Time.deltaTime);
+            Vector3 move = transform.right * moveX + transform.forward * moveZ;
+
+            _characterController.Move((move + Physics.gravity) * moveSpeed * Time.deltaTime);
+        }
+
+        // Метод для возврата текущей скорости игрока
+        public Vector3 GetPlayerVelocity()
+        {
+            return _characterController.velocity;
         }
     }
 }
