@@ -1,14 +1,13 @@
-using System;
 using UnityEngine;
 
 namespace _Game.Scripts
 {
     public class FirstPersonController : MonoBehaviour
     {
-        public float moveSpeed = 5f;
-        public float mouseSensitivity = 2f;
-        public CharacterController _characterController;
-        public Transform playerCamera;
+        [SerializeField] private  float moveSpeed = 5f;
+        [SerializeField] private  float mouseSensitivity = 2f;
+        [SerializeField] private  CharacterController _characterController;
+        [SerializeField] private  Transform playerCamera;
 
         private float cameraPitch = 0f;
 
@@ -35,12 +34,6 @@ namespace _Game.Scripts
             Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
             _characterController.Move((move + Physics.gravity) * moveSpeed * Time.deltaTime);
-        }
-
-        // Метод для возврата текущей скорости игрока
-        public Vector3 GetPlayerVelocity()
-        {
-            return _characterController.velocity;
         }
     }
 }
