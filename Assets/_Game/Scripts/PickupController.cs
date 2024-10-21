@@ -79,6 +79,7 @@ namespace _Game.Scripts
         {
             _isHold = true;
             _pickedRigidbody.isKinematic = true;
+            _pickedRigidbody.interpolation = RigidbodyInterpolation.None;
             _holdRoot.transform.position = _pickedObject.transform.position;
             _pickedObject.transform.parent = _holdRoot.transform;
             onHoldPickupable?.Invoke();
@@ -90,6 +91,7 @@ namespace _Game.Scripts
 
             _pickedObject.transform.parent = null;
             _pickedRigidbody.isKinematic = false;
+            _pickedRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
             
             _holdRoot.Throw(_pickedRigidbody);
             
