@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pickupable : MonoBehaviour
+public class Grabable : MonoBehaviour
 {
     public Rigidbody Rigidbody { get; private set; }
     private void Awake()

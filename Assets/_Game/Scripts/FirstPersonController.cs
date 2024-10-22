@@ -4,10 +4,10 @@ namespace _Game.Scripts
 {
     public class FirstPersonController : MonoBehaviour
     {
-        [SerializeField] private  float moveSpeed = 5f;
-        [SerializeField] private  float mouseSensitivity = 2f;
-        [SerializeField] private  CharacterController _characterController;
-        [SerializeField] private  Transform playerCamera;
+        [SerializeField] private float moveSpeed = 5f;
+        [SerializeField] private float mouseSensitivity = 2f;
+        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private Transform playerCamera;
 
         private float cameraPitch = 0f;
 

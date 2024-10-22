@@ -6,22 +6,29 @@ public class TooltipShower : MonoBehaviour
 {
     [SerializeField] private GameObject _tooltip;
     [SerializeField] private TextMeshProUGUI _textTooltip;
-    [SerializeField] private PickupController _pickupController;
+    [SerializeField] private Finder _finder;
+    [SerializeField] private Grabber _grabber;
 
     private void Awake()
     {
-        _pickupController.onFindPickupable += Show;
-        _pickupController.onHoldPickupable += Hide;
-        _pickupController.onLostPickupable += Hide;
-        Hide();
+        _finder.onFind += grabable =>
+        {
+            Show(grabable);
+        };
+        
+        _finder.onLost += grabable =>
+        {
+            Hide();
+        };
     }
+
 
     private void Hide()
     {
         _tooltip.SetActive(false);
     }
 
-    private void Show(Pickupable obj)
+    private void Show(Grabable obj)
     {
         if (!_tooltip.activeSelf)
         {

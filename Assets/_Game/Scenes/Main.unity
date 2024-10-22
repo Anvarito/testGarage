@@ -844,9 +844,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542499189}
-  - component: {fileID: 542499190}
   m_Layer: 0
-  m_Name: Thrower
+  m_Name: GrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -867,19 +866,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1880310856}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542499190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542499188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d1165489ccd45988025c45d200d1402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _throwForce: 150
 --- !u!1 &542792103 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1044071335751422, guid: 43374f02c65eea84ca9c2bf34a6af4b1, type: 3}
@@ -2303,9 +2289,11 @@ GameObject:
   - component: {fileID: 1216216032}
   - component: {fileID: 1216216031}
   - component: {fileID: 1216216030}
-  - component: {fileID: 1216216033}
   - component: {fileID: 1216216034}
+  - component: {fileID: 1216216033}
   - component: {fileID: 1216216035}
+  - component: {fileID: 1216216037}
+  - component: {fileID: 1216216036}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2437,7 +2425,34 @@ MonoBehaviour:
   _pickupLayer:
     serializedVersion: 2
     m_Bits: 64
-  _holdRoot: {fileID: 542499190}
+--- !u!114 &1216216036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216216028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1165489ccd45988025c45d200d1402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _throwForce: 150
+  _grabPoint: {fileID: 542499189}
+  finder: {fileID: 1216216035}
+--- !u!114 &1216216037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216216028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb66266bcbcc4753abea154f2093ba31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pushForce: 0.5
 --- !u!1 &1361435773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1044071335751422, guid: 43374f02c65eea84ca9c2bf34a6af4b1, type: 3}
@@ -2817,7 +2832,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tooltip: {fileID: 2042583245}
   _textTooltip: {fileID: 821421644}
-  _pickupController: {fileID: 1216216035}
+  _finder: {fileID: 1216216035}
+  _grabber: {fileID: 1216216036}
 --- !u!114 &1634329984
 MonoBehaviour:
   m_ObjectHideFlags: 0
