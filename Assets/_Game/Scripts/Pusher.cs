@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
+    [RequireComponent(typeof(CharacterController))]
     public class Pusher : MonoBehaviour
     {
         [SerializeField] private float _pushForce;
