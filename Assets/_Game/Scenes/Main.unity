@@ -3020,7 +3020,6 @@ GameObject:
   - component: {fileID: 1216216030}
   - component: {fileID: 1216216033}
   - component: {fileID: 1216216035}
-  - component: {fileID: 1216216037}
   - component: {fileID: 1216216036}
   m_Layer: 0
   m_Name: Body
@@ -3144,19 +3143,6 @@ MonoBehaviour:
   _throwForce: 150
   _grabPoint: {fileID: 542499189}
   finder: {fileID: 1216216035}
---- !u!114 &1216216037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216216028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb66266bcbcc4753abea154f2093ba31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pushForce: 0.5
 --- !u!1 &1361435773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1044071335751422, guid: 43374f02c65eea84ca9c2bf34a6af4b1, type: 3}
@@ -3563,6 +3549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576172101}
   - component: {fileID: 1576172102}
+  - component: {fileID: 1576172103}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3611,7 +3598,20 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.01, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1576172103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576172100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb66266bcbcc4753abea154f2093ba31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pushForce: 0.5
 --- !u!1001 &1580954968
 PrefabInstance:
   m_ObjectHideFlags: 0
